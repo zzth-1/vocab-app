@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四级核心4500 · 刷单词</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- 顶部栏 -->
+  <header class="topbar">
+    <div class="tabs">
+      <button class="tab active" data-mode="memory">记忆模式</button>
+      <button class="tab" data-mode="spelling">拼写模式</button>
+      <button class="tab" data-mode="combo">组合模式</button>
+    </div>
+    <div class="counter">剩余：<span id="counter">0</span></div>
+  </header>
+
+  <!-- 主区域 -->
+  <div class="main-area">
+
+    <!-- 左侧竖直按钮条（只剩记录按钮） -->
+    <div class="side-buttons">
+      <button class="side-btn record-btn" id="recordBtn" title="查看记录 (Ctrl+R)">📋<span>记录</span></button>
+    </div>
+
+    <!-- 主卡片 -->
+    <main class="card" id="card"></main>
+
+    <!-- 卡片内左上角 "上一个" 按钮 -->
+    <button class="nav-btn prev-btn" id="prevBtn" title="上一个 (↑ 或 -)">↑ 上一个</button>
+
+    <!-- 卡片内右上角 "下一个" 按钮 -->
+    <button class="nav-btn next-btn" id="nextBtn" title="下一个 (↓ 或 +)">下一个 ↓</button>
+
+    <!-- 记录框：卡片左侧外部，从卡片左边缘滑出 -->
+    <aside class="record-panel" id="recordPanel">
+      <div class="record-header">
+        <span>答题记录（最多 150  条）</span>
+        <button class="record-close" id="recordClose">✕</button>
+      </div>
+      <div class="record-list" id="recordList"></div>
+    </aside>
+
+  </div>
+
+  <!-- 进度条 -->
+  <div class="progress"><div id="progressBar" style="width:0%"></div></div>
+
+  <!-- 底部统计 -->
+  <footer class="footer">
+    <span id="stats">已掌握 0 / 0</span>
+    <button id="resetBtn" class="reset-btn">重置进度</button>
+  </footer>
+
+</div>
+
+<script src="words.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
