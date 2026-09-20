@@ -22,9 +22,14 @@
   <!-- 主区域 -->
   <div class="main-area">
 
-    <!-- 左侧竖直按钮条（只剩记录按钮） -->
+    <!-- 左侧竖直按钮条 -->
     <div class="side-buttons">
       <button class="side-btn record-btn" id="recordBtn" title="查看记录 (Ctrl+R)">📋<span>记录</span></button>
+      <button class="side-btn group-btn" id="groupBtn" title="设置分组大小">
+        <span class="group-progress-bg" id="groupProgressBg"></span>
+        <span class="group-label" id="groupLabel">组</span>
+        <span>分组</span>
+      </button>
     </div>
 
     <!-- 主卡片 -->
@@ -36,10 +41,10 @@
     <!-- 卡片内右上角 "下一个" 按钮 -->
     <button class="nav-btn next-btn" id="nextBtn" title="下一个 (↓ 或 +)">下一个 ↓</button>
 
-    <!-- 记录框：卡片左侧外部，从卡片左边缘滑出 -->
+    <!-- 记录框 -->
     <aside class="record-panel" id="recordPanel">
       <div class="record-header">
-        <span>答题记录（最多 150  条）</span>
+        <span>答题记录（最多 150 条）</span>
         <button class="record-close" id="recordClose">✕</button>
       </div>
       <div class="record-list" id="recordList"></div>
@@ -57,6 +62,29 @@
   </footer>
 
 </div>
+
+<!-- 分组设置弹窗 -->
+<div class="group-modal-overlay" id="groupModalOverlay" style="display:none;">
+  <div class="group-modal">
+    <h3>选择每组单词数量</h3>
+    <div class="group-options" id="groupOptions">
+      <button class="group-opt" data-size="20">20</button>
+      <button class="group-opt" data-size="50">50</button>
+      <button class="group-opt" data-size="75">75</button>
+      <button class="group-opt" data-size="100">100</button>
+      <button class="group-opt" data-size="150">150</button>
+      <button class="group-opt" data-size="custom">自定义</button>
+    </div>
+    <div class="group-custom-row" id="customRow" style="display:none;">
+      <input type="number" id="customInput" min="1" max="4500" placeholder="输入数量" value="30">
+      <button id="customConfirm">确定</button>
+    </div>
+    <button class="group-modal-close" id="groupModalClose">关闭</button>
+  </div>
+</div>
+
+<!-- ✨ 夜间模式切换按钮：屏幕右下角悬浮 -->
+<button class="theme-btn" id="themeBtn" title="切换夜间模式">🌙</button>
 
 <script src="words.js"></script>
 <script src="app.js"></script>
